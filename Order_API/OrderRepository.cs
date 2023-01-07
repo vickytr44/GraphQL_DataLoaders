@@ -1,4 +1,6 @@
-﻿namespace Order_API
+﻿using System.Data.Entity;
+
+namespace Order_API
 {
     public class OrderRepository
     {
@@ -17,6 +19,16 @@
         }
 
         public List<OrderType> GetOrder() => _order;
-        public List<OrderType> GetOrderBy(string name) => _order.Where(x => x.CustomerName == name).ToList();
+        public List<OrderType> GetOrderBy(string name)
+        {
+            return _order.Where(x => x.CustomerName == name).ToList();
+        }
+
+        public async Task<ILookup<string, OrderType>> GetOrderBy(IReadOnlyList<string> name)
+        {
+            var orders = await _order.Where(x => name.Contains(x.CustomerName)).AsQueryable().ToListAsync();
+
+            return orders.ToLookup(x => x.CustomerName);
+        }
     }
 }

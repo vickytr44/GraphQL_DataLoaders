@@ -1,5 +1,4 @@
 using Customer_API;
-using StackExchange.Redis;
 
 var builder = WebApplication.CreateBuilder(args);
 

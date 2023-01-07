@@ -1,4 +1,4 @@
 ﻿extend type OrderType{
-	customerinfo(where : CustomerTypeFilterInput): CustomerType
+	customerinfo: CustomerType
 	@delegate(path: "customerByName(where: $arguments:where name: $fields:customerName)")
 }

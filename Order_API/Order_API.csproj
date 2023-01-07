@@ -7,6 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="EntityFramework" Version="6.4.4" />
     <PackageReference Include="HotChocolate.AspNetCore" Version="12.13.2" />
     <PackageReference Include="HotChocolate.Data" Version="12.13.2" />
     <PackageReference Include="HotChocolate.Stitching.Redis" Version="12.13.2" />

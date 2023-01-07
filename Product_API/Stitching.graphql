@@ -3,4 +3,6 @@
 	@delegate(path: "productBy(name: $fields:name)")
 	productInfo_DataLoader: ProductType
 	@delegate(path: "productByWithdataLoader(name: $fields:name)")
+	productInfo_DataLoaderDelegate: ProductType
+	@delegate(path: "productByWithdataLoaderDelegate(name: $fields:name)")
 }

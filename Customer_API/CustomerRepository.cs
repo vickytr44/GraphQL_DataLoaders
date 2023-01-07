@@ -15,5 +15,7 @@
         }
 
         public CustomerType GetCustomerBy(string name) => _customer[name];
+
+        public List<CustomerType> GetAllCustomers() => _customer.Values.ToList();
     }
 }
