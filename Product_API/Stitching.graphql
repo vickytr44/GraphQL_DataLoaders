@@ -1,0 +1,6 @@
+﻿extend type ProductName{
+	productInfo: ProductType
+	@delegate(path: "productBy(name: $fields:name)")
+	productInfo_DataLoader: ProductType
+	@delegate(path: "productByWithdataLoader(name: $fields:name)")
+}

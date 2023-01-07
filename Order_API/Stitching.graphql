@@ -1,0 +1,4 @@
+﻿extend type CustomerType{
+	orders(first:Int after:String last:Int before:String where:OrderTypeFilterInput order:[OrderTypeSortInput!]): OrderByConnection
+	@delegate(path: "orderBy(first: $arguments:first last: $arguments:last before: $arguments:before after: $arguments:after where: $arguments:where order: $arguments:order name: $fields:name)")
+}
